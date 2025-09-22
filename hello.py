@@ -1,4 +1,1 @@
-def greet():
-    return "Hello, GitHub!"
-
-print(greet())
+print("Hello, Signals and Systems with Python!")
