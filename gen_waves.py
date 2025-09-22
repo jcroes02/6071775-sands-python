@@ -1,0 +1,14 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def generate_sine_wave(frequency, duration, sample_rate):
+    t=np.linspace(0,duration, int(sample_rate))
+    return np.sin(2*np.pi*frequency*t)
+
+plt.plot(generate_sine_wave(0.5,2,100))
+
+def generate_square_signal(A,F,duration,sample_rate):
+    t=np.linspace(0,duration,int(sample_rate))
+    return A*signal.square(np.pi*F*t)
+
+plt.plot(generate_square_signal(10,1,10,100))
