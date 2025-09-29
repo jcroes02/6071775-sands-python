@@ -18,3 +18,4 @@ def gen_sawtooth_signal(A,F,duration,sample_rate):
     return A*signal.sawtooth(2*np.pi*F*t)
 
 plt.plot(gen_sawtooth_signal(10,1,10,100000))
+
