@@ -19,3 +19,10 @@ def gen_sawtooth_signal(A,F,duration,sample_rate):
 
 plt.plot(gen_sawtooth_signal(10,1,10,100000))
 
+def gen_step(S,E,L,SR):
+    t=np.linspace(S,E,SR)
+    v=np.where(t>L,1,0)
+    return t,v
+
+t,v=gen_step(-10,10,2,200)
+plt.plot(t,v)
