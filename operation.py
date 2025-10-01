@@ -1,34 +1,17 @@
-import matplotlib.pyplot as plt
 from gen_waves import *
-#sine wave
-A=2
-F=5
-duration=1
-sample_rate=200
 
-sine=gen_sine_wave(A,F,duration,sample_rate)
+def time_shift(
+    
 
-#square wave
-A=2
-F=5
-duration=1
-sample_rate=200
+def add_signals(signal1, signal2):
+    """Add two signals together (must be same length)."""
+    if len(signal1) != len(signal2):
+        raise ValueError("Signals must have the same length")
+    return signal1 + signal2
 
-square=gen_square_signal(A,F,duration,sample_rate)
-
-#sawtooth
-A=2
-F=5
-duration=1
-sample_rate=1000
-
-sawtooth=gen_sawtooth_signal(A,F,duration,sample_rate)
-
-#unit step
-A=2
-S=-10
-E=10
-L=5
-sample_rate=500
-
-step=gen_step(A,L,S,E,sample_rate)
+def multiply_signals(signal1, signal2):
+    """Multiply two signals together."""
+    if len(signal1) != len(signal2):
+        raise ValueError("Signals must have the same length")
+    return signal1 * signal2
+    
