@@ -8,7 +8,9 @@ def axis_shift(signal, shift_samples,M,fill_value=0):
         time_shift[shift_samples:] = fill_value
     return M+time_shift
 
-def amplitude_shift(signal,
+def amplitude_shift(signal,A):
+    return A*signal
+    
 def add_signals(signal1, signal2):
     """Add two signals together (must be same length)."""
     if len(signal1) != len(signal2):
