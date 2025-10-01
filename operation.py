@@ -1,8 +1,14 @@
 from gen_waves import *
 
-def time_shift(
-    
+def axis_shift(signal, shift_samples,M,fill_value=0):
+    time_shift = np.roll(signal, shift_samples)
+    if time_shift > 0:
+        time_shift[:shift_samples] = fill_value
+    elif time_shift < 0:
+        time_shift[shift_samples:] = fill_value
+    return M+time_shift
 
+def amplitude_shift(signal,
 def add_signals(signal1, signal2):
     """Add two signals together (must be same length)."""
     if len(signal1) != len(signal2):
