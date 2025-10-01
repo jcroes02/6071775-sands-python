@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import signal
 
 def generate_sine_wave(frequency, duration, sample_rate):
     t=np.linspace(0,duration, int(sample_rate))
