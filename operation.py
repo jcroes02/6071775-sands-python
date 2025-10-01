@@ -22,4 +22,7 @@ def multiply_signals(signal1, signal2):
     if len(signal1) != len(signal2):
         raise ValueError("Signals must have the same length")
     return signal1 * signal2
-    
+
+def time_scale(t_signal,stretch):
+    return t_signal*stretch
+
