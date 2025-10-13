@@ -15,3 +15,6 @@ functions in operator file
 -add_signals(): add two signals together
 -multiply_signal(): multiply two signals
 -time_scale(): scale time axis to compress/stetch signal
+
+functions in test file
+-tests the wave generator file
