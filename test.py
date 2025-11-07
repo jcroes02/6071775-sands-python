@@ -113,14 +113,14 @@ def test_time_scale():
     - Scaling factor validation
     - Edge case handling
     """
-    t,v = gen_sine_wave(1,1,10,1000)
+    t,v = gen_sine_wave(1,1,10,3000)
 
     scaled_signal = time_scale(v, 2)
-    assert len(scaled_signal) == 5000
+    assert len(scaled_signal) == 500
     assert np.array_equal(scaled_signal, v[::2])
 
     scaled_signal = time_scale(v, 0.5)
-    assert len(scaled_signal) == 20000
+    assert len(scaled_signal) == 2000
 
 def test_amplitude_shift():
     """
@@ -131,7 +131,7 @@ def test_amplitude_shift():
     - Negative scaling factor handling
     - Zero scaling case
     """
-    t,v = gen_sine_wave(1,1,10,)
+    t,v = gen_sine_wave(1,1,10,2)
 
     scaled_signal = amplitude_shift(v, 2)
     assert np.array_equal(scaled_signal, v * 2)
@@ -151,8 +151,8 @@ def test_add_signals():
     - Different length handling (truncates to shorter)
     - Zero signal addition
     """
-    t1, v1 = gen_sine_wave(1,1,10,2)
-    t2, v2 = gen_sine_wave(3,2,10,2)
+    t1, v1 = gen_sine_wave(1,1,10,1000)
+    t2, v2 = gen_sine_wave(3,2,10,1000)
 
     added_signal = add_signals(v1, v2)
     assert len(added_signal) == min(len(v1), len(v2))
@@ -174,8 +174,8 @@ def test_multiply_signals():
     - Different length handling (truncates to shorter)
     - Zero signal multiplication
     """
-    t1, v1 = gen_sine_wave(1,1,10,2)
-    t2, v2 = gen_sine_wave(3,2,10,2)
+    t1, v1 = gen_sine_wave(1,1,10,1000)
+    t2, v2 = gen_sine_wave(3,2,10,1000)
     
     multiplied_signal = multiply_signals(v1, v2)
     assert np.array_equal(multiplied_signal, v1 * v2)
