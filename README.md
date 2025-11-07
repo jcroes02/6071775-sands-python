@@ -26,3 +26,4 @@ A Python package for generating, manipulating, and visualizing various waveform 
 ## test
 
 Comprehensive test suites validating correct signal generation and transformation functionality
+(C:\Users\jcroe\Pictures\Screenshots)
