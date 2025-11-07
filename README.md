@@ -23,7 +23,7 @@ A Python package for generating, manipulating, and visualizing various waveform 
 - Side by side plots(signal vs modified signal)
 - Flexible plotting using Matplotlib with adjustable configurations
 
-## test
+## Test
 
 Comprehensive test suites validating correct signal generation and transformation functionality
-(C:\Users\jcroe\Pictures\Screenshots)
+![(C:\Users\jcroe\Pictures\Screenshots)
