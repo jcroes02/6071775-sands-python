@@ -10,7 +10,7 @@ s_r=100
 L=3
 
 t,signal = gen_square_signal(A,F,d,s_r)
-t,signal2 = gen_stepl(A,L,d,s_r)
+t,signal2 = gen_step(A,L,d,s_r)
 
 time_shifted_wave = time_shift(signal, 5, s_r)
 
