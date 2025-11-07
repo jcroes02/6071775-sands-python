@@ -113,7 +113,7 @@ def test_time_scale():
     - Scaling factor validation
     - Edge case handling
     """
-    t,v = create_sine_signal(1,1,10,1000)
+    t,v = gen_sine_wave(1,1,10,10000)
 
     scaled_signal = time_scale(v, 2)
     assert len(scaled_signal) == 5000
