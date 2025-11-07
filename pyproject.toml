@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AESB2122_project"
+version = "0.1.0"
+description = "A package for creating, analyzing and processing signals"
+authors = [ {name = "Jean-Louis Croes", email = "jcroes02@gmail.com"},]
+dependencies = ["numpy", "scipy", "matplotlib", "pandas"]
+
+[tool.setuptools.packages.find]
+where = ["."] 
+include = ["AESB2122_project*"] 
+exclude = ["images*", "tests*", "build*", "dist*"] 
