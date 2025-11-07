@@ -1,31 +1,30 @@
 from gen_waves import *
 
-def axis_shift(signal, shift_samples,M,fill_value=0):
+def time_shift(signal, shift, s_r):
     """
-    Shift a signal along the time axis and apply a constant offset.
+    Shift a signal in time by a specified amount.
     
     Parameters:
     -----------
     signal : numpy.ndarray
-        Input signal to be shifted
-    shift_samples : int
-        Number of samples to shift (positive = right shift, negative = left shift)
-    M : float
-        Constant value to add to the entire shifted signal
-    fill_value : float, optional
-        Value to fill the empty samples created by shifting (default is 0)
+        Input signal array to be shifted
+    shift : float
+        Time shift amount in seconds (positive = delay, negative = advance)
+    s_r : float
+        Sample rate in samples per second
     
     Returns:
     --------
     numpy.ndarray
-        Shifted signal with constant offset M applied
+        Time-shifted signal array
     """
-    time_shift = np.roll(signal, shift_samples)
-    if time_shift > 0:
-        time_shift[:shift_samples] = fill_value
-    elif time_shift < 0:
-        time_shift[shift_samples:] = fill_value
-    return M+time_shift
+    shift_samples = int(shift * s_r)
+    if shift_samples > 0:
+        return np.concatenate((np.zeros(shift_samples), signal[:-shift_samples]))
+    elif shift_samples < 0:
+        return np.concatenate((signal[-shift_samples:], np.zeros(-shift_samples)))
+    else:
+        return signal
 
 def amplitude_shift(signal,A):
     """
