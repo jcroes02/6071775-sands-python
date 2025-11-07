@@ -113,7 +113,7 @@ def test_time_scale():
     - Scaling factor validation
     - Edge case handling
     """
-    t,v = gen_sine_wave(1,1,10,2)
+    t,v = gen_sine_wave(1,1,10,1000)
 
     scaled_signal = time_scale(v, 2)
     assert len(scaled_signal) == 5000
@@ -131,7 +131,7 @@ def test_amplitude_shift():
     - Negative scaling factor handling
     - Zero scaling case
     """
-    t,v = gen_sine_wave(1,1,10,2)
+    t,v = gen_sine_wave(1,1,10,)
 
     scaled_signal = amplitude_shift(v, 2)
     assert np.array_equal(scaled_signal, v * 2)
