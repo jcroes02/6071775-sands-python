@@ -90,7 +90,7 @@ def test_time_shift():
     - Negative shift handling
     - Zero shift case
     """
-    t,v = gen_sine_wave(1, 1, 10, 2)
+    t,v = gen_sine_wave(1, 1, 10, 1000)
     v[500] = 1 
 
     shifted_signal = time_shift(v, 2, 100)
