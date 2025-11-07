@@ -45,10 +45,23 @@ def amplitude_shift(signal,A):
     return A*signal
     
 def add_signals(signal1, signal2):
-    """Add two signals together (must be same length)."""
-    if len(signal1) != len(signal2):
-        raise ValueError("Signals must have the same length")
-    return signal1 + signal2
+    """
+    Add two signals together element-wise.
+    
+    Parameters:
+    -----------
+    signal1 : numpy.ndarray
+        First input signal array
+    signal2 : numpy.ndarray
+        Second input signal array
+    
+    Returns:
+    --------
+    numpy.ndarray
+        Sum of the two signals (truncated to the shorter signal length)
+    """
+    length = min(len(signal1), len(signal2))
+    return signal1[:length] + signal2[:length] 
 
 def multiply_signals(signal1, signal2):
     """Multiply two signals together."""
