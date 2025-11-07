@@ -64,25 +64,40 @@ def add_signals(signal1, signal2):
     return signal1[:length] + signal2[:length] 
 
 def multiply_signals(signal1, signal2):
-    """Multiply two signals together."""
-    if len(signal1) != len(signal2):
-        raise ValueError("Signals must have the same length")
-    return signal1 * signal2
-
-def time_scale(t_signal,stretch):
     """
-    Scale a time-domain signal by a stretch factor.
+    Multiply two signals together element-wise.
     
     Parameters:
     -----------
-    t_signal : numpy.ndarray
-        Time-domain input signal to be scaled
-    stretch : float
-        Stretch factor for time scaling
+    signal1 : numpy.ndarray
+        First input signal array
+    signal2 : numpy.ndarray
+        Second input signal array
     
     Returns:
     --------
     numpy.ndarray
-        Time-scaled signal
+        Product of the two signals (truncated to the shorter signal length)
     """
-    return t_signal*stretch
+    length = min(len(signal1), len(signal2))
+    return signal1[:length] * signal2[:length]
+    
+def time_scale(signal, scale):
+    """
+    Scale a signal in time by downsampling.
+    
+    Parameters:
+    -----------
+    signal : numpy.ndarray
+        Input signal array to be scaled
+    scale : float
+        Scaling factor (scale > 1 = compression, scale < 1 = expansion)
+    
+    Returns:
+    --------
+    numpy.ndarray
+        Time-scaled signal array
+    """
+    indices = np.arange(0, len(signal), scale)
+    indices = indices[indices < len(signal)].astype(int)
+    return signal[indices]
