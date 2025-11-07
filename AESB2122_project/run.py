@@ -16,7 +16,7 @@ time_shifted_wave = time_shift(signal, 5, s_r)
 
 time_scaled_wave = time_scale(signal, 3)
 
-amplitude_scaled_wave = amplitude_scale(signal, 4)
+amplitude_shifted_wave = amplitude_shift(signal, 4)
 
 added_wave = add_signals(signal, signal2)
 
