@@ -113,14 +113,14 @@ def test_time_scale():
     - Scaling factor validation
     - Edge case handling
     """
-    t,v = gen_sine_wave(1,1,10,3000)
+    t,v = gen_sine_wave(1,1,10,1000)
 
     scaled_signal = time_scale(v, 2)
-    assert len(scaled_signal) == 500
+    assert len(scaled_signal) == 5000
     assert np.array_equal(scaled_signal, v[::2])
 
     scaled_signal = time_scale(v, 0.5)
-    assert len(scaled_signal) == 2000
+    assert len(scaled_signal) == 20000
 
 def test_amplitude_shift():
     """
