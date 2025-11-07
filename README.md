@@ -1,20 +1,28 @@
-Packages required to run the files
--Python 3.x
--NumPy
--Scipy
+# Digital Signal Processing package
 
-fucntions within wave generator file
--gen_sine_wave(): generates a sine wave with adjustable frequencies, amplitudes and duration
--gen_square_signal(): generates a square wave with adjustable frequencies, amplitudes and duration
--gen_sawtooth_signal():generates a sawtooth wave with adjustable frequencies, amplitudes and duration
--gen_step(): generates a heaviside step function with adjustable begin and endpoints and amplitudes
+A Python package for generating, manipulating, and visualizing various waveform signals with extensive operational capabilities.
 
-functions in operator file
--axis_shift():shifts signal in time and vertical axis
--amplitude_shift(): scale signal amplitude
--add_signals(): add two signals together
--multiply_signal(): multiply two signals
--time_scale(): scale time axis to compress/stetch signal
+## Waveform Generation
 
-functions in test file
--tests the wave generator file
+- **Sinusoidal waveforms** - Fundamental periodic oscillations
+- **Square pulses** - Digital signals with abrupt level changes  
+- **Triangular waveforms** - Linear ascending/descending patterns
+- **Sawtooth signals** - Gradual linear increases with instant drops
+- **Step functions** - Instantaneous transition signals
+
+## Signal Manipulations
+
+- **Time shifting** - Shift signals forward or backward in time
+- **Time scalinng** - Alter signal time compression/expansion
+- **amplitude shiftt** - Scale signal intensity levels
+- **signal addition** - Combine multiple signals additively
+- **Signal multiplication** - Multiply corresponding signal points
+
+## Visialization
+
+- Side by side plots(signal vs modified signal)
+- Flexible plotting using Matplotlib with adjustable configurations
+
+## test
+
+Comprehensive test suites validating correct signal generation and transformation functionality
